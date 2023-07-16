@@ -2,8 +2,11 @@ def rotateArray(nums, k):
     k %= len(nums) 
     #Normalize the value to avoid unnecessary calculations
     reverse(nums, 0, len(nums)-1)
+    print("Reverse 1:", nums)
     reverse(nums, 0, k-1)
+    print("Reverse 2:", nums)
     reverse(nums, k, len(nums)-1)
+    print("Reverse 3:", nums)
 
 #Define the reverse function 
 def reverse(nums, start, end):
