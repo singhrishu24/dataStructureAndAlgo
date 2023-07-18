@@ -1,4 +1,5 @@
 // Kruskal's Algorithm
+// To Build and Run the code Comment the Edge and Graph class in the PrimAlgorithm.java file.
 
 import java.util.ArrayList;
 import java.util.Collections;
