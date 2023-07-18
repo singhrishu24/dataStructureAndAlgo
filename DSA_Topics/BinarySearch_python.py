@@ -1,40 +1,24 @@
-def binary_search_iterative(arr, target):
-    low = 0
-    high = len(arr) - 1
+class BinarySearch:
+    @staticmethod
+    def binary_search(array, target):
+        left = 0
+        right = len(array)-1
 
-    while low <= high:
-        mid = (low + high)//2
-
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            low = mid + 1
-        else:
-            high = mid - 1
-    return -1
-
-def binary_search_recursive(arr, target, low, high):
-
-    if low > high:
+        while left <= right:
+            mid = left + (right - left)//2
+            if array[mid] == target:
+                return mid
+            elif array[mid] < target:
+                left = mid+1
+            else:
+                right = mid - 1
         return -1
-    mid = low + (high-low)//2
 
-    if arr[mid] == target:
-        return mid
-    elif arr[mid] < target:
-        return binary_search_recursive(arr, target, mid+1, high)
-    else:
-        return binary_search_recursive(arr, target, low, mid-1)
+array = [1,3,5,7,9,11,12]    
+target = 7
 
-
-    
-#Driver Code 
-arr = [2,4,6,8,10,12,14,16,18,20]
-target = 12
-
-#result = binary_search_iterative(arr, target)
-result = binary_search_recursive(arr, target, 0, len(arr)-1)
-if result != -1 :
-    print("Element found at index :", result)
+result = BinarySearch.binary_search(array, target)
+if result != -1:
+    print("Target found at index :", result)
 else:
-    print("Element not found in the array.")    
+    print("Target nout found in the array.")    
