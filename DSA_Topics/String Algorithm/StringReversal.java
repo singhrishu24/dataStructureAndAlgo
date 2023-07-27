@@ -12,9 +12,9 @@ public class StringReversal {
         int end = charArray.length-1;
 
         while (start < end){
-            char temp = charArray[start];
+            char temp        = charArray[start];
             charArray[start] = charArray[end];
-            charArray[end] = temp;
+            charArray[end]   = temp;
             start++;
             end--;
         }
@@ -24,6 +24,6 @@ public class StringReversal {
     public static void main(String[] args){
         String input = "Hello, World!";
         String reversed = reverseStringCA(input);
-        System.out.println("Reversed string: " + reversed);
+        System.out.println("Reversed String: " + reversed);
     }
 }

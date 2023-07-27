@@ -1,5 +1,7 @@
 # Topological Sorting : Find linear ordering of the vertices in a DAG (Directed Acrylic Graph).
-
+# DAG (Directed Acyclic Graph) : 
+#                               i.  Has Directed Edges, directional
+#                               ii. Acyclic nature.
 from collections import defaultdict
 
 class Graph:
@@ -10,6 +12,7 @@ class Graph:
     def addEdge(self, u, v):
         self.graph[u].append(v)
 
+    # Performs Depth First Search Recursively
     def topologicalSortUtil(self, v, visited, stack):
         visited[v] = True
 
@@ -19,6 +22,8 @@ class Graph:
 
         stack.insert(0, v)
 
+
+    # Keeps track of visited vertices.
     def topologicalSort(self):
         visited = [False] * self.V
         stack = []
